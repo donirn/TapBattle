@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TapBattle" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,8 +21,59 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oEq-HR-P3q">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="334"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tMI-sm-DSp">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="334"/>
+                                        <connections>
+                                            <action selector="player1DidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0gH-IW-fSF"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.01176470588" green="0.66274509800000003" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="tMI-sm-DSp" secondAttribute="trailing" id="Oh7-ws-YBr"/>
+                                    <constraint firstItem="tMI-sm-DSp" firstAttribute="top" secondItem="oEq-HR-P3q" secondAttribute="top" id="e6Z-VR-BOx"/>
+                                    <constraint firstAttribute="bottom" secondItem="tMI-sm-DSp" secondAttribute="bottom" id="fY9-k8-hMM"/>
+                                    <constraint firstItem="tMI-sm-DSp" firstAttribute="leading" secondItem="oEq-HR-P3q" secondAttribute="leading" id="oJF-hv-4KK"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y4k-n6-jAM">
+                                <rect key="frame" x="0.0" y="334" width="375" height="333"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w3E-Uu-oSz">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="333"/>
+                                        <connections>
+                                            <action selector="player2DidTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TLc-Fw-Km0"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.94117647059999998" green="0.23529411759999999" blue="0.29411764709999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="w3E-Uu-oSz" secondAttribute="bottom" id="9NH-Z9-1cx"/>
+                                    <constraint firstItem="w3E-Uu-oSz" firstAttribute="top" secondItem="Y4k-n6-jAM" secondAttribute="top" id="M7q-dI-9z7"/>
+                                    <constraint firstAttribute="trailing" secondItem="w3E-Uu-oSz" secondAttribute="trailing" id="cHB-Cy-JmC"/>
+                                    <constraint firstItem="w3E-Uu-oSz" firstAttribute="leading" secondItem="Y4k-n6-jAM" secondAttribute="leading" id="fLR-RI-aHj"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="oEq-HR-P3q" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="DAf-Dp-RiQ"/>
+                            <constraint firstAttribute="trailing" secondItem="oEq-HR-P3q" secondAttribute="trailing" id="J54-go-Wmg"/>
+                            <constraint firstAttribute="trailing" secondItem="Y4k-n6-jAM" secondAttribute="trailing" id="Nto-6D-ZUb"/>
+                            <constraint firstItem="oEq-HR-P3q" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.5" id="R6K-6J-WPs"/>
+                            <constraint firstAttribute="bottom" secondItem="Y4k-n6-jAM" secondAttribute="bottom" id="WCo-zr-DSC"/>
+                            <constraint firstItem="Y4k-n6-jAM" firstAttribute="top" secondItem="oEq-HR-P3q" secondAttribute="bottom" id="djN-MF-X6d"/>
+                            <constraint firstItem="Y4k-n6-jAM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="elj-9v-gRN"/>
+                            <constraint firstItem="oEq-HR-P3q" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="gL5-Sa-Knw"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="heightConstraint" destination="R6K-6J-WPs" id="4Za-wm-bXZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
