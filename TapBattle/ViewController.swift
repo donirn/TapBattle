@@ -29,6 +29,23 @@ class ViewController: UIViewController {
         let height =  CGFloat(player1NumberOfTap - player2NumberOfTap)*10
         heightConstraint.constant = height
         view.layoutIfNeeded()
+        
+        if checkWin() > 0 {
+            print("\(checkWin()) won!")
+        }
+    }
+    
+    func checkWin() -> Int{
+        let screenHeight = UIScreen.main.bounds.height
+        let numberOfTapsToWin = screenHeight/20
+        
+        let tapsDifferences = CGFloat(player1NumberOfTap - player2NumberOfTap)
+        if tapsDifferences >= numberOfTapsToWin{
+            return 1
+        } else if tapsDifferences <= -numberOfTapsToWin{
+            return 2
+        }
+        return 0
     }
     
     override var prefersStatusBarHidden: Bool {
